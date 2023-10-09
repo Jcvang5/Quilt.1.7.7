@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+		    html,body{
+		        display:flex;
+		        flex-wrap: wrap;
+		        height:100%;
+		        width:100%;
+		        padding-left:2%;
+		        padding-right:2%;
+		    }
+		    div{
+		        height:10%;
+		        width:9%;
+		        border: 1px solid black;
+		    }
+		</style>
+	</head>
+	<body>
+		<script>
+            //Checklist:
+            //Read instructions and set up code skeleton
+		    //Add 100 divs to the canvas
+                //Need for loop or else too much code/work
+            //Create variable for div and append them
+            //Write paint function (Must use mathfloor and random to get random color)
+            //Add event listener for hover using mouseover  
+            function getRandomColor(){
+                var colors = ["red", "blue", "orange", "green"];
+                return colors[Math.floor(Math.random() * colors.length)]; 
+            }    
+
+            function paint(event){
+                event.target.style.backgroundColor = getRandomColor();
+            }
+
+            for (let i = 0; i < 100; i++){
+                var div = document.createElement("div");
+                div.addEventListener("mouseover", paint);
+                document.body.appendChild(div);
+            }
+		</script>
+	</body>
+</html>
